@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-16T08:40:00.011Z</updated>
+  <updated>2017-06-16T09:27:08.830Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/06/16/github-codes/"/>
     <id>http://yoursite.com/2017/06/16/github-codes/</id>
     <published>2017-06-16T08:26:23.000Z</published>
-    <updated>2017-06-16T08:40:00.011Z</updated>
+    <updated>2017-06-16T09:27:08.830Z</updated>
     
     <content type="html"><![CDATA[<h4 id="设置名字和邮箱"><a href="#设置名字和邮箱" class="headerlink" title="设置名字和邮箱"></a>设置名字和邮箱</h4><pre><code>$ git config --global user.name &quot;Your Name&quot;
 $ git config --global user.email &quot;email@example.com&quot;
@@ -41,7 +41,7 @@ $ git diff HEAD -- readme.txt : 查看工作区和版本库里面最新版本的
 $ git log --pretty=oneline
 </code></pre><h4 id="回退到上一个版本"><a href="#回退到上一个版本" class="headerlink" title="回退到上一个版本"></a>回退到上一个版本</h4><pre><code>$ git reset --hard HEAD^：上上个版本就是HEAD^^ 前100个版本就是HEAD~100
 </code></pre><h4 id="穿越到到某一个指定的版本"><a href="#穿越到到某一个指定的版本" class="headerlink" title="穿越到到某一个指定的版本"></a>穿越到到某一个指定的版本</h4><pre><code>$ git reset --hard 3628164 ：版本号没必要写全，写前几位Git会自动进行匹配
-</code></pre><p><img src="/0.jpg" alt="dd"></p>
+</code></pre><p><img src="/imgs/git-codes/0.jpg" alt="dd"></p>
 ]]></content>
     
     <summary type="html">
