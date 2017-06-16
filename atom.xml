@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Kuroneko&#39;s secret Blog</title>
+  <subtitle>personal blog for technicsharing</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-06-16T08:40:00.011Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Chirs.sheen</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>github codes</title>
+    <link href="http://yoursite.com/2017/06/16/github-codes/"/>
+    <id>http://yoursite.com/2017/06/16/github-codes/</id>
+    <published>2017-06-16T08:26:23.000Z</published>
+    <updated>2017-06-16T08:40:00.011Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="设置名字和邮箱"><a href="#设置名字和邮箱" class="headerlink" title="设置名字和邮箱"></a>设置名字和邮箱</h4><pre><code>$ git config --global user.name &quot;Your Name&quot;
+$ git config --global user.email &quot;email@example.com&quot;
+</code></pre><h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><pre><code>$ mkdir learngit
+$ cd learngit
+$ pwd
+/Users/michael/learngit
+</code></pre><h4 id="初始化版本库"><a href="#初始化版本库" class="headerlink" title="初始化版本库"></a>初始化版本库</h4><pre><code>$ git init
+Initialized empty Git repository in /Users/michael/learngit/.git/
+$ ls -ah 
+</code></pre><h4 id="修改文件并提交"><a href="#修改文件并提交" class="headerlink" title="修改文件并提交"></a>修改文件并提交</h4><pre><code>$ vim readme.txt
+$ git add readme.txt
+$ git commit -m &quot;wrote a readme file&quot;
+</code></pre><h4 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h4><pre><code>$ git status
+$ git diff readme.txt 
+$ git diff HEAD -- readme.txt : 查看工作区和版本库里面最新版本的区别
+</code></pre><h4 id="查看历史版本日志"><a href="#查看历史版本日志" class="headerlink" title="查看历史版本日志"></a>查看历史版本日志</h4><pre><code>$ git log
+$ git log --pretty=oneline
+</code></pre><h4 id="回退到上一个版本"><a href="#回退到上一个版本" class="headerlink" title="回退到上一个版本"></a>回退到上一个版本</h4><pre><code>$ git reset --hard HEAD^：上上个版本就是HEAD^^ 前100个版本就是HEAD~100
+</code></pre><h4 id="穿越到到某一个指定的版本"><a href="#穿越到到某一个指定的版本" class="headerlink" title="穿越到到某一个指定的版本"></a>穿越到到某一个指定的版本</h4><pre><code>$ git reset --hard 3628164 ：版本号没必要写全，写前几位Git会自动进行匹配
+</code></pre><p><img src="/0.jpg" alt="dd"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;设置名字和邮箱&quot;&gt;&lt;a href=&quot;#设置名字和邮箱&quot; class=&quot;headerlink&quot; title=&quot;设置名字和邮箱&quot;&gt;&lt;/a&gt;设置名字和邮箱&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;$ git config --global user.name &amp;quot;Your
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/06/16/hello-world/"/>
+    <id>http://yoursite.com/2017/06/16/hello-world/</id>
+    <published>2017-06-16T06:35:58.940Z</published>
+    <updated>2017-06-16T06:35:58.940Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> github codes · Kuroneko's secret Blog</title><meta name="description" content="github codes - Chirs.sheen"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/black-cat-noeye.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Kuroneko's secret Blog"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/black-cat-noeye.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/Kuronekoo" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">github codes</h1><div class="post-info">Jun 16, 2017</div><div class="post-content"><h4 id="设置名字和邮箱"><a href="#设置名字和邮箱" class="headerlink" title="设置名字和邮箱"></a>设置名字和邮箱</h4><pre><code>$ git config --global user.name &quot;Your Name&quot;
+$ git config --global user.email &quot;email@example.com&quot;
+</code></pre><h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><pre><code>$ mkdir learngit
+$ cd learngit
+$ pwd
+/Users/michael/learngit
+</code></pre><h4 id="初始化版本库"><a href="#初始化版本库" class="headerlink" title="初始化版本库"></a>初始化版本库</h4><pre><code>$ git init
+Initialized empty Git repository in /Users/michael/learngit/.git/
+$ ls -ah 
+</code></pre><h4 id="修改文件并提交"><a href="#修改文件并提交" class="headerlink" title="修改文件并提交"></a>修改文件并提交</h4><pre><code>$ vim readme.txt
+$ git add readme.txt
+$ git commit -m &quot;wrote a readme file&quot;
+</code></pre><h4 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h4><pre><code>$ git status
+$ git diff readme.txt 
+$ git diff HEAD -- readme.txt : 查看工作区和版本库里面最新版本的区别
+</code></pre><h4 id="查看历史版本日志"><a href="#查看历史版本日志" class="headerlink" title="查看历史版本日志"></a>查看历史版本日志</h4><pre><code>$ git log
+$ git log --pretty=oneline
+</code></pre><h4 id="回退到上一个版本"><a href="#回退到上一个版本" class="headerlink" title="回退到上一个版本"></a>回退到上一个版本</h4><pre><code>$ git reset --hard HEAD^：上上个版本就是HEAD^^ 前100个版本就是HEAD~100
+</code></pre><h4 id="穿越到到某一个指定的版本"><a href="#穿越到到某一个指定的版本" class="headerlink" title="穿越到到某一个指定的版本"></a>穿越到到某一个指定的版本</h4><pre><code>$ git reset --hard 3628164 ：版本号没必要写全，写前几位Git会自动进行匹配
+</code></pre><p><img src="/0.jpg" alt="dd"></p>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/06/16/hello-world/" class="next">下一篇</a></div><div class="copyright"><p>© 2015 - 2017 <a href="http://yoursite.com">Chirs.sheen</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
