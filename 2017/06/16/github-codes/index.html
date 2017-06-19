@@ -12,107 +12,99 @@ $ git add readme.txt
 $ git commit -m &quot;wrote a readme file&quot;
 </code></pre><h4 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h4><pre><code>$ git status
 $ git diff readme.txt 
-$ git diff HEAD -- readme.txt : 查看工作区和版本库里面最新版本的区别
-</code></pre><h4 id="查看历史版本日志"><a href="#查看历史版本日志" class="headerlink" title="查看历史版本日志"></a>查看历史版本日志</h4><pre><code>$ git log
+$ git diff HEAD -- readme.txt : 
+</code></pre><p>查看工作区和版本库里面最新版本的区别</p>
+<h4 id="查看历史版本日志"><a href="#查看历史版本日志" class="headerlink" title="查看历史版本日志"></a>查看历史版本日志</h4><pre><code>$ git log
 $ git log --pretty=oneline
-</code></pre><h4 id="回退到上一个版本"><a href="#回退到上一个版本" class="headerlink" title="回退到上一个版本"></a>回退到上一个版本</h4><pre><code>$ git reset --hard HEAD^：上上个版本就是HEAD^^ 前100个版本就是HEAD~100
-</code></pre><h4 id="穿越到到某一个指定的版本"><a href="#穿越到到某一个指定的版本" class="headerlink" title="穿越到到某一个指定的版本"></a>穿越到到某一个指定的版本</h4><pre><code>$ git reset --hard 3628164 ：版本号没必要写全，写前几位Git会自动进行匹配
-</code></pre><p><img src="/imgs/git-codes/head.jpg" alt="head"><br>    Git的版本回退速度非常快，因为Git在内部有个指向当前版本的HEAD指针，当你回退版本的时候，Git仅仅是把HEAD从指向append GPL</p>
-<h4 id="后悔药"><a href="#后悔药" class="headerlink" title="后悔药"></a>后悔药</h4><pre><code>$ git reflog：查看命令历史，可以查看到版本号
-</code></pre><h4 id="工作区（WorkSpace）"><a href="#工作区（WorkSpace）" class="headerlink" title="工作区（WorkSpace）"></a>工作区（WorkSpace）</h4><pre><code>电脑里能看到的目录，比如我的learngit文件夹就是一个工作区
-</code></pre><h4 id="版本库（Repository）"><a href="#版本库（Repository）" class="headerlink" title="版本库（Repository）"></a>版本库（Repository）</h4><pre><code>![Repository](/imgs/git-codes/Repository.jpg)
-
-工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
-
-Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。
-
-git add把文件添加进去，实际上就是把文件修改添加到暂存区；
-
-git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。
-
-创建Git版本库时，Git自动为我们创建了唯一一个master分支
-</code></pre><h4 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h4><pre><code>$ git checkout -- readme.txt ：让这个文件回到最近一次git commit或git add时的状态，
-                        git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。
-$ git reset HEAD readme.txt ：可以把暂存区的修改撤销掉（unstage），重新放回工作区。
-                        git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本。
-版本回退
-</code></pre><h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><pre><code>$ rm test.txt
+</code></pre><h4 id="回退到上一个版本"><a href="#回退到上一个版本" class="headerlink" title="回退到上一个版本"></a>回退到上一个版本</h4><pre><code>$ git reset --hard HEAD^：
+</code></pre><p>上上个版本就是HEAD^^ 前100个版本就是HEAD~100</p>
+<h4 id="穿越到到某一个指定的版本"><a href="#穿越到到某一个指定的版本" class="headerlink" title="穿越到到某一个指定的版本"></a>穿越到到某一个指定的版本</h4><pre><code>$ git reset --hard 3628164 ：
+</code></pre><p>版本号没必要写全，写前几位Git会自动进行匹配</p>
+<p><img src="/imgs/git-codes/head.jpg" alt="head"><br>Git的版本回退速度非常快，因为Git在内部有个指向当前版本的HEAD指针，当你回退版本的时候，Git仅仅是把HEAD从指向append GPL</p>
+<h4 id="后悔药"><a href="#后悔药" class="headerlink" title="后悔药"></a>后悔药</h4><pre><code>$ git reflog：
+</code></pre><p>查看命令历史，可以查看到版本号</p>
+<h4 id="工作区（WorkSpace）"><a href="#工作区（WorkSpace）" class="headerlink" title="工作区（WorkSpace）"></a>工作区（WorkSpace）</h4><p>电脑里能看到的目录，比如我的learngit文件夹就是一个工作区</p>
+<h4 id="版本库（Repository）"><a href="#版本库（Repository）" class="headerlink" title="版本库（Repository）"></a>版本库（Repository）</h4><p><img src="/imgs/git-codes/Repository.jpg" alt="Repository"></p>
+<p>工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</p>
+<p>Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。</p>
+<p>git add把文件添加进去，实际上就是把文件修改添加到暂存区；</p>
+<p>git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
+<p>创建Git版本库时，Git自动为我们创建了唯一一个master分支</p>
+<h4 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h4><pre><code>$ git checkout -- readme.txt ：
+</code></pre><p>让这个文件回到最近一次git commit或git add时的状态，git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。<br>    $ git reset HEAD readme.txt ：<br>可以把暂存区的修改撤销掉（unstage），重新放回工作区。git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本。</p>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><pre><code>$ rm test.txt
 $ git rm test.txt
 $ git commit -m &quot;remove test.txt&quot;
-</code></pre><h4 id="创建SSH-Key"><a href="#创建SSH-Key" class="headerlink" title="创建SSH Key"></a>创建SSH Key</h4><pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;：在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人
-</code></pre><h4 id="本地关联远程仓库"><a href="#本地关联远程仓库" class="headerlink" title="本地关联远程仓库"></a>本地关联远程仓库</h4><pre><code>$ git remote add origin git@github.com:GitHubUserName/learngit.git
+</code></pre><h4 id="创建SSH-Key"><a href="#创建SSH-Key" class="headerlink" title="创建SSH Key"></a>创建SSH Key</h4><pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;：
+</code></pre><p>在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人</p>
+<h4 id="本地关联远程仓库"><a href="#本地关联远程仓库" class="headerlink" title="本地关联远程仓库"></a>本地关联远程仓库</h4><pre><code>$ git remote add origin git@github.com:GitHubUserName/learngit.git
 $ git push -u origin master：
         第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来
 $ git push origin master
 </code></pre><h4 id="从远程仓库克隆一个仓库到本地"><a href="#从远程仓库克隆一个仓库到本地" class="headerlink" title="从远程仓库克隆一个仓库到本地"></a>从远程仓库克隆一个仓库到本地</h4><pre><code>$ git clone git@github.com:michaelliao/gitskills.git
-
-Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。
-</code></pre><h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><pre><code>HEAD指向的是当前分支。
-当前分支指向提交
-我们创建新的分支，例如dev时，Git新建了一个指针叫dev，指向master相同的提交，再把HEAD指向dev
-当在dev上的工作完成了，就可以把dev合并到master上
-合并完分支后，甚至可以删除dev分支
-
-$ git checkout -b dev：git checkout命令加上-b参数表示创建并切换
-$ git branch dev
+</code></pre><p>Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。</p>
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>HEAD指向的是当前分支。<br>当前分支指向提交<br>我们创建新的分支，例如dev时，Git新建了一个指针叫dev，指向master相同的提交，再把HEAD指向dev<br>当在dev上的工作完成了，就可以把dev合并到master上<br>合并完分支后，甚至可以删除dev分支</p>
+<pre><code>$ git checkout -b dev：
+</code></pre><p>git checkout命令加上-b参数表示创建并切换</p>
+<pre><code>$ git branch dev
 $ git checkout dev
-$ git branch：查看当前分支，列出所有分支，当前分支前面会标一个*号
-</code></pre><h4 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h4><pre><code>$ git checkout master
-$ git merge dev：合并指定分支到当前分支
-$ git branch -d dev：删除dev分支
-</code></pre><h4 id="分支合并冲突"><a href="#分支合并冲突" class="headerlink" title="分支合并冲突"></a>分支合并冲突</h4><pre><code>Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支的内容
-将冲突内容修改后再提交即可
-$ git log --graph --pretty=oneline --abbrev-commit：查看分支的合并情况
-</code></pre><h4 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h4><pre><code>$ git merge --no-ff -m &quot;merge with no-ff&quot; dev：--no-ff参数，表示禁用Fast forward
-    ![branch](/imgs/git-codes/branch.png)
-
-master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活
-干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本
-你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了
-</code></pre><h4 id="存储进行到一半的工作"><a href="#存储进行到一半的工作" class="headerlink" title="存储进行到一半的工作"></a>存储进行到一半的工作</h4><pre><code>$ git stash：将工作现场存储到stash中
-$ git stash list：查看存储的工作现场
-$ git stash pop：恢复的同时把stash内容也删除
-$ git stash apply：恢复工作现场，stash的内容不删除
-$ git stash drop：删除stash中的内容
-</code></pre><h4 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h4><pre><code>在哪个分支上修复bug，就在哪个分支上创建修复分支
-</code></pre><h4 id="强行删除分支"><a href="#强行删除分支" class="headerlink" title="强行删除分支"></a>强行删除分支</h4><pre><code>$ git branch -D feature-vulcan：丢弃一个没有被合并过的分支
-</code></pre><h3 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h3><h4 id="查看远程仓库的信息"><a href="#查看远程仓库的信息" class="headerlink" title="查看远程仓库的信息"></a>查看远程仓库的信息</h4><pre><code>从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin
-$ git remote
+$ git branch
+</code></pre><p>：查看当前分支，列出所有分支，当前分支前面会标一个*号</p>
+<h4 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h4><pre><code>$ git checkout master
+$ git merge dev：
+</code></pre><p>合并指定分支到当前分支</p>
+<pre><code>$ git branch -d dev
+</code></pre><p>：删除dev分支</p>
+<h4 id="分支合并冲突"><a href="#分支合并冲突" class="headerlink" title="分支合并冲突"></a>分支合并冲突</h4><p>Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支的内容<br>将冲突内容修改后再提交即可</p>
+<pre><code>$ git log --graph --pretty=oneline --abbrev-commit
+</code></pre><p>：查看分支的合并情况</p>
+<h4 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h4><pre><code>$ git merge --no-ff -m &quot;merge with no-ff&quot; dev
+</code></pre><p>：–no-ff参数，表示禁用Fast forward<br><img src="/imgs/git-codes/branch.png" alt="branch"></p>
+<p>master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活<br>干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本<br>你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了</p>
+<h4 id="存储进行到一半的工作"><a href="#存储进行到一半的工作" class="headerlink" title="存储进行到一半的工作"></a>存储进行到一半的工作</h4><pre><code>$ git stash
+</code></pre><p>：将工作现场存储到stash中</p>
+<pre><code>$ git stash list
+</code></pre><p>：查看存储的工作现场</p>
+<pre><code>$ git stash pop
+</code></pre><p>：恢复的同时把stash内容也删除</p>
+<pre><code>$ git stash apply
+</code></pre><p>：恢复工作现场，stash的内容不删除</p>
+<pre><code>$ git stash drop
+</code></pre><p>：删除stash中的内容</p>
+<h4 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h4><p>在哪个分支上修复bug，就在哪个分支上创建修复分支</p>
+<h4 id="强行删除分支"><a href="#强行删除分支" class="headerlink" title="强行删除分支"></a>强行删除分支</h4><pre><code>$ git branch -D feature-vulcan
+</code></pre><p>：丢弃一个没有被合并过的分支</p>
+<h3 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h3><h4 id="查看远程仓库的信息"><a href="#查看远程仓库的信息" class="headerlink" title="查看远程仓库的信息"></a>查看远程仓库的信息</h4><p>从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin</p>
+<pre><code>$ git remote
 origin
 
 $ git remote -v
 origin  git@github.com:michaelliao/learngit.git (fetch)
 origin  git@github.com:michaelliao/learngit.git (push)
-</code></pre><h4 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h4><pre><code>推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上
-
-$ git push origin master
+</code></pre><h4 id="推送分支"><a href="#推送分支" class="headerlink" title="推送分支"></a>推送分支</h4><p>推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上</p>
+<pre><code>$ git push origin master
 $ git push origin dev
-
-但是，并不是一定要把本地分支往远程推送，那么，哪些分支需要推送，哪些不需要呢？
-
-• master分支是主分支，因此要时刻与远程同步；
-
-• dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；
-
-• bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；
-
-• feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。
-</code></pre><h4 id="抓取分支"><a href="#抓取分支" class="headerlink" title="抓取分支"></a>抓取分支</h4><pre><code>1. 首先，可以试图用git push origin branch-name推送自己的修改；
-2. 如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
-3. 如果合并有冲突，则解决冲突，并在本地提交；
-4. 没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！
-5. 如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream branch-name origin/branch-name。
-</code></pre><h3 id="用标签来管理git版本，更加高效"><a href="#用标签来管理git版本，更加高效" class="headerlink" title="用标签来管理git版本，更加高效"></a>用标签来管理git版本，更加高效</h3><h4 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h4><pre><code>首先，切换到需要打标签的分支上
-$ git checkout master
+</code></pre><p>但是，并不是一定要把本地分支往远程推送，那么，哪些分支需要推送，哪些不需要呢？</p>
+<p>• master分支是主分支，因此要时刻与远程同步；</p>
+<p>• dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；</p>
+<p>• bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；</p>
+<p>• feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</p>
+<h4 id="抓取分支"><a href="#抓取分支" class="headerlink" title="抓取分支"></a>抓取分支</h4><ol>
+<li>首先，可以试图用git push origin branch-name推送自己的修改；</li>
+<li>如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；</li>
+<li>如果合并有冲突，则解决冲突，并在本地提交；</li>
+<li>没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！</li>
+<li>如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令git branch –set-upstream branch-name origin/branch-name。</li>
+</ol>
+<h3 id="用标签来管理git版本，更加高效"><a href="#用标签来管理git版本，更加高效" class="headerlink" title="用标签来管理git版本，更加高效"></a>用标签来管理git版本，更加高效</h3><h4 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h4><p>首先，切换到需要打标签的分支上</p>
+<pre><code>$ git checkout master
 $ git tag v1.0
-
-对历史版本打标签
-$ git tag v0.9 6224937
-
-用命令git tag查看标签：
-$ git tag
+</code></pre><p>对历史版本打标签</p>
+<pre><code>$ git tag v0.9 6224937
+</code></pre><p>用命令git tag查看标签：</p>
+<pre><code>$ git tag
 v0.9
 v1.0
-
-标签不是按时间顺序列出，而是按字母排序的。可以用git show &lt;tagname&gt;
-</code></pre></div></article></div></main><footer><div class="paginator"></div><div class="copyright"><p>© 2015 - 2017 <a href="http://yoursite.com">Chirs.sheen</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+</code></pre><p>标签不是按时间顺序列出，而是按字母排序的。可以用</p>
+<p>git show <tagname></tagname></p>
+</div></article></div></main><footer><div class="paginator"></div><div class="copyright"><p>© 2015 - 2017 <a href="http://yoursite.com">Chirs.sheen</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
