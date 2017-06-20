@@ -4,9 +4,9 @@
   <subtitle>personal blog for technicsharing</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://kuronekoo.github.io/"/>
   <updated>2017-06-19T02:49:00.155Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://kuronekoo.github.io/</id>
   
   <author>
     <name>Chirs.sheen</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>build your own blog by hexo&amp;github</title>
-    <link href="http://yoursite.com/2017/06/19/build-your-own-blog-by-hexo-github/"/>
-    <id>http://yoursite.com/2017/06/19/build-your-own-blog-by-hexo-github/</id>
+    <link href="https://kuronekoo.github.io/2017/06/19/build-your-own-blog-by-hexo-github/"/>
+    <id>https://kuronekoo.github.io/2017/06/19/build-your-own-blog-by-hexo-github/</id>
     <published>2017-06-19T02:48:10.000Z</published>
     <updated>2017-06-19T02:49:00.155Z</updated>
     
@@ -37,8 +37,8 @@
   
   <entry>
     <title>github codes</title>
-    <link href="http://yoursite.com/2017/06/16/github-codes/"/>
-    <id>http://yoursite.com/2017/06/16/github-codes/</id>
+    <link href="https://kuronekoo.github.io/2017/06/16/github-codes/"/>
+    <id>https://kuronekoo.github.io/2017/06/16/github-codes/</id>
     <published>2017-06-16T08:26:23.000Z</published>
     <updated>2017-06-19T02:43:58.601Z</updated>
     
